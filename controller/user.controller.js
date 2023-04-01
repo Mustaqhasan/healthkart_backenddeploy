@@ -72,7 +72,7 @@ const login = async (req, res) => {
       if (result) {
         res.status(200).send({
           msg: "Login Succussfull!",
-          token: jwt.sign({ userID: user._id }, `${process.env.secretKey}`),
+          token: jwt.sign({ userID: user._id }, `healthcure`),
         });
       } else {
         res.status(400).send({ msg: "Wrong Credentials" });
