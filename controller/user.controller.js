@@ -50,7 +50,7 @@ const register = async (req, res) => {
         pass: hash,
         location,
         gender,
-        role,
+        // role,
       });
       await newUser.save();
       // if (user.role == "Admin") {

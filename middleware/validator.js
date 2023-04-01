@@ -6,7 +6,7 @@ const validator = async (req, res, next) => {
   if (token) {
     const decoded = jwt.verify(token, `healthcure`);
     const user = await UserModel.findOne({ _id: decoded.userID });
-    if (user.role !== "Admin") {
+    if (user.email !== "admin@gmail.com") {
       return res.send({ msg: "You are not an Admin" });
     }
   }

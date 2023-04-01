@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema({
   pass: { type: String },
   location: { type: String },
   gender: { type: String },
-  role: { type: String, enum: ["Admin", "User"] },
+  // role: { type: String, enum: ["Admin", "User"] },
 },{
     versionKey:false
 });
