@@ -4,8 +4,10 @@ const { cartRouter } = require("./routes/cart.routes")
 const { productRouter } = require("./routes/products.routes")
 const { userRouter } = require("./routes/user.routes")
 require("dotenv").config()
+const cors=require("cors")
 const app=express()
 app.use(express.json())
+app.use(cors())
 app.get("/", (req, res) => {
   res.send({ msg: "Welcome to backend app" });
 });
