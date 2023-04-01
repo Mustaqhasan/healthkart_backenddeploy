@@ -6,6 +6,9 @@ const { userRouter } = require("./routes/user.routes")
 require("dotenv").config()
 const app=express()
 app.use(express.json())
+app.get("/", (req, res) => {
+  res.send({ msg: "Welcome to backend app" });
+});
 app.use('/users',userRouter)
 app.use('/products',productRouter)
 app.use("/cart",cartRouter)
