@@ -17,6 +17,19 @@ const getAllProducts = async (req, res) => {
         return res.status(200).send(products);
       }
     }
+    if (sortByPrice) {
+      if (sortByPrice == "asc") {
+        const products = await ProductModel.find().sort({
+          price1: 1,
+        });
+        return res.status(200).send(products);
+      } else if (sortByPrice == "desc") {
+        const products = await ProductModel.find().sort({
+          price1: -1,
+        });
+        return res.status(200).send(products);
+      }
+    }
     if (category) {
       const products = await ProductModel.find({ category });
       return res.status(200).send(products);
